@@ -1,6 +1,1 @@
-venv/
-__pycache__/
-*.pyc
-.env
-.vscode/
-.idea/
+student-performance-cicd
