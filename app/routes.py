@@ -11,17 +11,12 @@ predictor = StudentPerformancePredictor()
 
 @router.get("/")
 def home():
-    return {
-        "message": "Student Performance Prediction API",
-        "status": "Running"
-    }
+    return {"message": "Student Performance Prediction API", "status": "Running"}
 
 
 @router.get("/health")
 def health():
-    return {
-        "status": "Healthy"
-    }
+    return {"status": "Healthy"}
 
 
 @router.post(
@@ -33,9 +28,7 @@ def predict(student: StudentRequest):
     try:
         prediction = predictor.predict(student.model_dump())
 
-        return PredictionResponse(
-            predicted_score=round(prediction, 2)
-        )
+        return PredictionResponse(predicted_score=round(prediction, 2))
 
     except Exception as e:
         raise HTTPException(

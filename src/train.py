@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import joblib
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import (
